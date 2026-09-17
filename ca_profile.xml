@@ -1,0 +1,19 @@
+<CommunityApplications>
+  <Profile>
+This repo carries Unraid Community Applications templates for a handful of
+self-built, self-hosted tools: **claude-code** (a persistent, tmux-backed
+Claude Code container for driving a homelab from anywhere), Prometheus
+exporters for services that don't expose their own metrics
+(**ado-exporter** for Azure DevOps, **cloud-billing-exporter** for
+Azure/GCP/Hetzner spend, **semaphore-exporter** and **patchmon-exporter**),
+a small family of MCP (Model Context Protocol) servers bridged over HTTP
+with supergateway (**docker-mcp**, **filesystem-mcp**, **hass-mcp**,
+**tailscale-mcp**), and **homelab-runbooks**, a generic MkDocs Material
+docs-site template for any Markdown-based docs repo.
+
+Each app has its own GitHub repo with the Dockerfile, source, and a full
+README covering configuration - linked from each template. Issues and
+questions go to the individual app's repo, linked from its own template.
+  </Profile>
+  <WebPage>https://github.com/louij2/unraid-templates</WebPage>
+</CommunityApplications>
