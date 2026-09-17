@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>docker-mcp</Name>
+  <Repository>louij2/docker-mcp:latest</Repository>
+  <Registry>https://pypi.org/project/mcp-server-docker/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/louij2/docker-mcp/issues</Support>
+  <Project>https://github.com/louij2/docker-mcp</Project>
+  <Overview>Docker MCP server, bridged over HTTP with supergateway (baked into the image) so any MCP client that speaks HTTP/SSE can use it. Mounts docker.sock, which is root-equivalent on the host - only run this where you trust every client that can reach it.</Overview>
+  <Category>Tools: Utilities:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/docker-mcp.xml</TemplateURL>
+  <Icon>https://cdn.simpleicons.org/docker/2496ED</Icon>
+  <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
+  <PostArgs>supergateway --stdio "mcp-server-docker" --port 8095</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Mounts the Docker socket - root-equivalent access to this host.</Requires>
+  <Config Name="Host Port 8095" Target="8095" Default="8095" Mode="tcp" Description="HTTP port supergateway serves the bridged MCP endpoint on." Type="Port" Display="always" Required="true" Mask="false">8095</Config>
+  <Config Name="docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Read-write bind mount - required." Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+</Container>

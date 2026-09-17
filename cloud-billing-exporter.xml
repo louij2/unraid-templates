@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cloud-billing-exporter</Name>
+  <Repository>louij2/cloud-billing-exporter:latest</Repository>
+  <Registry>https://hub.docker.com/r/louij2/cloud-billing-exporter</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/louij2/cloud-billing-exporter/issues</Support>
+  <Project>https://github.com/louij2/cloud-billing-exporter</Project>
+  <Overview>Prometheus exporter for Azure/GCP/Hetzner cloud spend. Polls each provider's billing API and exposes current cost by service/project/currency in Prometheus text format. Config is a JSON file (see config.example.json in the repo) plus per-provider credential files, all read-only bind mounts - never baked into the image.</Overview>
+  <Category>Tools: MonitoringLogging: Cloud:</Category>
+  <WebUI>http://[IP]:[PORT:9825]/metrics</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/cloud-billing-exporter.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/prometheus.png</Icon>
+  <ExtraParams>--restart=unless-stopped --memory=256m --cpus=0.5</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>At least one cloud provider's read-only billing credentials (Azure/GCP/Hetzner). See the repo README for exact scopes - run setup-credentials.sh for a guided setup.</Requires>
+  <Config Name="Host Port 9825" Target="9825" Default="9825" Mode="tcp" Description="Container Port: 9825" Type="Port" Display="always" Required="true" Mask="false">9825</Config>
+  <Config Name="config" Target="/run/secrets" Default="" Mode="ro" Description="Read-only bind mount holding config.json (see config.example.json in the repo) and any provider credential files it references." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/cloud-billing-exporter/config</Config>
+  <Config Name="CONFIG_PATH" Target="CONFIG_PATH" Default="/run/secrets/config.json" Mode="" Description="Path to config.json inside the container." Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/config.json</Config>
+</Container>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>tailscale-mcp</Name>
+  <Repository>louij2/tailscale-mcp:latest</Repository>
+  <Registry>https://www.npmjs.com/package/tailscale-mcp-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/louij2/tailscale-mcp/issues</Support>
+  <Project>https://github.com/louij2/tailscale-mcp</Project>
+  <Overview>Tailscale MCP server, bridged over HTTP with supergateway (baked into the image) so any MCP client that speaks HTTP/SSE can use it. Lets an MCP client inspect and manage your tailnet - devices, ACLs, routes.</Overview>
+  <Category>Tools: Utilities:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/tailscale-mcp.xml</TemplateURL>
+  <Icon>https://cdn.simpleicons.org/tailscale/4B5563</Icon>
+  <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
+  <PostArgs>sh -c 'export TAILSCALE_API_KEY="$(cat /run/secrets/key)"; exec supergateway --stdio "tailscale-mcp-server" --port 8097'</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>A Tailscale API access token (admin console -&gt; Settings -&gt; Keys).</Requires>
+  <Config Name="Host Port 8097" Target="8097" Default="8097" Mode="tcp" Description="HTTP port supergateway serves the bridged MCP endpoint on." Type="Port" Display="always" Required="true" Mask="false">8097</Config>
+  <Config Name="tailscale-api-key" Target="/run/secrets/key" Default="" Mode="ro" Description="Read-only bind mount to a file containing your Tailscale API key (never put the key directly in a Variable)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tailscale-mcp/tailscale-api-key</Config>
+  <Config Name="TAILSCALE_TAILNET" Target="TAILSCALE_TAILNET" Default="" Mode="" Description="Your tailnet name, e.g. your-org.ts.net or an email for a personal tailnet." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+</Container>

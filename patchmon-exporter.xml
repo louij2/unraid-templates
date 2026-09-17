@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>patchmon-exporter</Name>
+  <Repository>louij2/patchmon-exporter:latest</Repository>
+  <Registry>https://hub.docker.com/r/louij2/patchmon-exporter</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/louij2/patchmon-exporter/issues</Support>
+  <Project>https://github.com/louij2/patchmon-exporter</Project>
+  <Overview>Prometheus exporter for PatchMon that answers "is the fleet actually patched?" - a different question from "is PatchMon up" or "did the agent check in", both of which can stay green while a host silently stops applying updates. Reads PatchMon's Postgres backing store directly, read-only, as a dedicated DB role.</Overview>
+  <Category>Tools: MonitoringLogging:</Category>
+  <WebUI>http://[IP]:[PORT:9820]/metrics</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/patchmon-exporter.xml</TemplateURL>
+  <Icon>https://avatars.githubusercontent.com/u/170360133?v=4</Icon>
+  <ExtraParams>--restart=unless-stopped --memory=256m --cpus=0.5</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Network access to PatchMon's Postgres database, plus a dedicated read-only DB role for the exporter to connect as.</Requires>
+  <Config Name="Host Port 9820" Target="9820" Default="9820" Mode="tcp" Description="Container Port: 9820" Type="Port" Display="always" Required="true" Mask="false">9820</Config>
+  <Config Name="patchmon-dsn" Target="/run/secrets/patchmon-dsn" Default="" Mode="ro" Description="Read-only bind mount to a file holding a Postgres DSN, e.g. host=patchmon-database port=5432 dbname=patchmon_db user=patchmon_exporter password=..." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/patchmon-exporter/dsn</Config>
+</Container>

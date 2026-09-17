@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ado-exporter</Name>
+  <Repository>louij2/ado-exporter:latest</Repository>
+  <Registry>https://hub.docker.com/r/louij2/ado-exporter</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/louij2/ado-exporter/issues</Support>
+  <Project>https://github.com/louij2/ado-exporter</Project>
+  <Overview>Prometheus exporter for Azure DevOps pipeline/pool metrics and (optionally) GitHub repo activity. Polls each API read-only and exposes the results in Prometheus text format. GitHub metrics are optional - leave GITHUB_OWNER blank and skip the github-token mount to run ADO-only.</Overview>
+  <Category>Tools: MonitoringLogging:</Category>
+  <WebUI>http://[IP]:[PORT:9823]/metrics</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/ado-exporter.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/azure-devops.png</Icon>
+  <ExtraParams>--restart=unless-stopped --memory=256m --cpus=0.5</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>An Azure DevOps PAT with read access to the pipelines/pools you want to monitor. A GitHub token is optional, only needed if you set GITHUB_OWNER.</Requires>
+  <Config Name="Host Port 9823" Target="9823" Default="9823" Mode="tcp" Description="Container Port: 9823" Type="Port" Display="always" Required="true" Mask="false">9823</Config>
+  <Config Name="ado-pat" Target="/run/secrets/ado-pat" Default="" Mode="ro" Description="Read-only bind mount to a file containing your Azure DevOps PAT (do not put the PAT directly in a Variable)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ado-exporter/ado-pat</Config>
+  <Config Name="github-token" Target="/run/secrets/github-token" Default="" Mode="ro" Description="Optional. Read-only bind mount to a file containing a GitHub token, only used if GITHUB_OWNER is set." Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/ado-exporter/github-token</Config>
+  <Config Name="ADO_ORG" Target="ADO_ORG" Default="" Mode="" Description="Your Azure DevOps org URL, e.g. https://dev.azure.com/your-org" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="GITHUB_OWNER" Target="GITHUB_OWNER" Default="" Mode="" Description="Optional. GitHub user/org to pull repo metrics for. Leave blank to disable GitHub metrics entirely." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+</Container>
