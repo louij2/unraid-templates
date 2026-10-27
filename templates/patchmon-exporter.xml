@@ -11,7 +11,7 @@
   <Project>https://github.com/louij2/patchmon-exporter</Project>
   <ReadMe>https://raw.githubusercontent.com/louij2/patchmon-exporter/master/README.md</ReadMe>
   <Overview>Prometheus exporter for PatchMon that answers "is the fleet actually patched?" - a different question from "is PatchMon up" or "did the agent check in", both of which can stay green while a host silently stops applying updates. Reads PatchMon's Postgres backing store directly, read-only, as a dedicated DB role.</Overview>
-  <Category>Tools: MonitoringLogging:</Category>
+  <Category>Tools:System</Category>
   <WebUI>http://[IP]:[PORT:9820]/metrics</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/patchmon-exporter.xml</TemplateURL>
   <Icon>https://avatars.githubusercontent.com/u/170360133?v=4</Icon>

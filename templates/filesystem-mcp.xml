@@ -11,7 +11,7 @@
   <Project>https://github.com/louij2/filesystem-mcp</Project>
   <ReadMe>https://raw.githubusercontent.com/louij2/filesystem-mcp/master/README.md</ReadMe>
   <Overview>Filesystem MCP server, bridged over HTTP with supergateway (baked into the image) so any MCP client that speaks HTTP/SSE can use it. Exposes whatever directory you mount, read-write by default - mount read-only (:ro) if you only want it browsing/reading.</Overview>
-  <Category>Tools: Utilities:</Category>
+  <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/filesystem-mcp.xml</TemplateURL>
   <Icon>https://cdn.simpleicons.org/anthropic/D4A27F</Icon>
