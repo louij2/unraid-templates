@@ -10,8 +10,8 @@
   <Support>https://github.com/squidfunk/mkdocs-material</Support>
   <Project>https://squidfunk.github.io/mkdocs-material/</Project>
   <Overview>Serves any MkDocs Material docs site (runbooks, wikis, project docs - anything written in Markdown with an mkdocs.yml) as a live-rendered site. Point it at a read-only clone of your own docs git repo; edit the source on GitHub or locally, not in the container, and pull to refresh.</Overview>
-  <Category>Tools: Utilities:</Category>
-  <WebUI>http://[IP]:[PORT:8087]/</WebUI>
+  <Category>Tools:Utilities Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/homelab-runbooks.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/mkdocs.png</Icon>
   <ExtraParams>--restart=unless-stopped --memory=256m --cpus=0.25</ExtraParams>

@@ -11,7 +11,7 @@
   <Project>https://github.com/louij2/ado-exporter</Project>
   <ReadMe>https://raw.githubusercontent.com/louij2/ado-exporter/master/README.md</ReadMe>
   <Overview>Prometheus exporter for Azure DevOps pipeline/pool metrics and (optionally) GitHub repo activity. Polls each API read-only and exposes the results in Prometheus text format. GitHub metrics are optional - leave GITHUB_OWNER blank and skip the github-token mount to run ADO-only.</Overview>
-  <Category>Tools: MonitoringLogging:</Category>
+  <Category>Tools:System</Category>
   <WebUI>http://[IP]:[PORT:9823]/metrics</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/ado-exporter.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/azure-devops.png</Icon>

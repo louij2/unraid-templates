@@ -13,7 +13,7 @@
   <ReadMe>https://raw.githubusercontent.com/louij2/claude-code/master/README.md</ReadMe>
   <ReadMe/>
   <Overview>Always-on Claude Code session for managing a homelab from a phone or tablet, not just a laptop that might be closed or off the network.&#13;&#13;Runs a persistent tmux server so the same live session can be attached from any device - SSH in and run 'tmux attach -t main' (or `docker exec -it claude-code tmux attach -t main`). Sessions are also readable and repliable from the Claude mobile app via remote control.&#13;&#13;Uses host networking so it can reach the LAN directly, plus ssh/sshpass/gh/ripgrep/jq and common network-inspection tools.&#13;&#13;Sign in with 'claude-login' on first run (do not copy the OAuth URL out of a wrapped terminal by hand).</Overview>
-  <Category>Tools: Productivity:</Category>
+  <Category>AI: Productivity:</Category>
   <WebUI>https://claude.ai/code</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/claude-code.xml</TemplateURL>
   <Icon>https://claude.ai/images/claude_app_icon.png</Icon>

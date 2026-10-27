@@ -11,7 +11,7 @@
   <Project>https://github.com/louij2/semaphore-exporter</Project>
   <ReadMe>https://raw.githubusercontent.com/louij2/semaphore-exporter/master/README.md</ReadMe>
   <Overview>Prometheus exporter for Semaphore (semaphoreui.com), which has no native /metrics endpoint. Read-only: only GETs from Semaphore's API. Exports semaphore_task_running_seconds for every non-terminal task, so a task stuck running for hours shows up, not just failed/succeeded ones.</Overview>
-  <Category>Tools: MonitoringLogging:</Category>
+  <Category>Tools:System</Category>
   <WebUI>http://[IP]:[PORT:9819]/metrics</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/semaphore-exporter.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/semaphoreui/semaphore/develop/web/src/assets/logo.svg</Icon>

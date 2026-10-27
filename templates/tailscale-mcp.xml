@@ -11,7 +11,7 @@
   <Project>https://github.com/louij2/tailscale-mcp</Project>
   <ReadMe>https://raw.githubusercontent.com/louij2/tailscale-mcp/master/README.md</ReadMe>
   <Overview>Tailscale MCP server, bridged over HTTP with supergateway (baked into the image) so any MCP client that speaks HTTP/SSE can use it. Lets an MCP client inspect and manage your tailnet - devices, ACLs, routes.</Overview>
-  <Category>Tools: Utilities:</Category>
+  <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/tailscale-mcp.xml</TemplateURL>
   <Icon>https://cdn.simpleicons.org/tailscale/4B5563</Icon>
