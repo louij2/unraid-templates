@@ -14,7 +14,7 @@
   <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/tailscale-mcp.xml</TemplateURL>
-  <Icon>https://cdn.simpleicons.org/tailscale/4B5563</Icon>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/tailscale.png</Icon>
   <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
   <PostArgs>sh -c 'export TAILSCALE_API_KEY="$(cat /run/secrets/key)"; exec supergateway --stdio "tailscale-mcp-server" --port 8097'</PostArgs>
   <CPUset/>

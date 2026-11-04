@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>patchmon-guacd</Name>
+  <Repository>guacamole/guacd:1.5.5</Repository>
+  <Registry>https://github.com/PatchMon/PatchMon/pkgs/container/patchmon-server</Registry>
+  <Network>patchmon</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/guacamole/guacd</Support>
+  <Project>https://guacamole.apache.org/</Project>
+  <ReadMe>https://hub.docker.com/r/guacamole/guacd</ReadMe>
+  <Overview>Apache Guacamole daemon for PatchMon remote sessions (part 3 of 4). Joins the network patchmon with the DNS alias guacd. Read-only root filesystem, all capabilities dropped.</Overview>
+  <Category>Tools:Utilities Security:</Category>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/patchmon-guacd.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/apache-guacamole.png</Icon>
+  <ExtraParams>--restart=unless-stopped --network-alias=guacd --read-only --tmpfs /tmp:size=64m --security-opt=no-new-privileges:true --cap-drop=ALL --memory=512m --health-cmd='nc -z localhost 4822 || exit 1' --health-interval=10s --health-timeout=5s --health-retries=3 --log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Create the network once before installing any PatchMon container: docker network create patchmon. Install in this order: patchmon-database, patchmon-redis, patchmon-guacd, patchmon-server.</Requires>
+</Container>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>patchmon-database</Name>
+  <Repository>postgres:17-alpine</Repository>
+  <Registry>https://github.com/PatchMon/PatchMon/pkgs/container/patchmon-server</Registry>
+  <Network>patchmon</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/_/postgres</Support>
+  <Project>https://www.postgresql.org/</Project>
+  <ReadMe>https://hub.docker.com/_/postgres</ReadMe>
+  <Overview>PostgreSQL 17 for PatchMon (part 1 of 4: database, redis, guacd, server). Joins the network patchmon with the DNS alias database, which is what the server connects to. Use the same user, password and database name in patchmon-server.</Overview>
+  <Category>Tools:Utilities Security:</Category>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/patchmon-database.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/postgresql.png</Icon>
+  <ExtraParams>--restart=unless-stopped --network-alias=database --health-cmd='pg_isready -U $POSTGRES_USER -d $POSTGRES_DB' --health-interval=5s --health-timeout=5s --health-retries=7 --log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs></PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Create the network once before installing any PatchMon container: docker network create patchmon. Install in this order: patchmon-database, patchmon-redis, patchmon-guacd, patchmon-server.</Requires>
+  <Config Name="Database" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/patchmon/postgres" Mode="rw" Description="PostgreSQL data directory." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/patchmon/postgres</Config>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="patchmon_user" Mode="" Description="Database user." Type="Variable" Display="always" Required="true" Mask="false">patchmon_user</Config>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Database password. Generate one, e.g. openssl rand -hex 32." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="patchmon_db" Mode="" Description="Database name." Type="Variable" Display="always" Required="true" Mask="false">patchmon_db</Config>
+</Container>

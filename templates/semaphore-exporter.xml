@@ -14,7 +14,7 @@
   <Category>Tools:System</Category>
   <WebUI>http://[IP]:[PORT:9819]/metrics</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/semaphore-exporter.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/semaphoreui/semaphore/develop/web/src/assets/logo.svg</Icon>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/semaphore-ui.png</Icon>
   <ExtraParams>--restart=unless-stopped --memory=256m --cpus=0.5</ExtraParams>
   <PostArgs/>
   <CPUset/>

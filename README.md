@@ -13,6 +13,12 @@ Unraid Community Applications templates for a handful of self-built tools —
 [homelab-runbooks](https://github.com/louij2/homelab-runbooks) (a generic
 MkDocs Material docs-site template — bring your own docs repo).
 
+Also a four-container [PatchMon](https://github.com/PatchMon/PatchMon) stack
+(Linux patch monitoring, no other CA template exists): `patchmon-database`,
+`patchmon-redis`, `patchmon-guacd` and `patchmon-server`. Create the network once
+with `docker network create patchmon`, then install them in that order. The
+containers find each other by the aliases `database`, `redis` and `guacd`.
+
 ## Add this repo to your own Unraid
 
 **Apps** tab → **Settings** (top right) → **Template repositories** → add:

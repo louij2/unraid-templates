@@ -14,7 +14,7 @@
   <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/hass-mcp.xml</TemplateURL>
-  <Icon>https://cdn.simpleicons.org/homeassistant/18BCF2</Icon>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/home-assistant.png</Icon>
   <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
   <PostArgs>sh -c 'export HA_TOKEN="$(cat /run/secrets/tok)"; exec supergateway --stdio "python -m app" --port 8094'</PostArgs>
   <CPUset/>

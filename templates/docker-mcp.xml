@@ -14,7 +14,7 @@
   <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/docker-mcp.xml</TemplateURL>
-  <Icon>https://cdn.simpleicons.org/docker/2496ED</Icon>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/docker.png</Icon>
   <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
   <PostArgs>supergateway --stdio "mcp-server-docker" --port 8095</PostArgs>
   <CPUset/>

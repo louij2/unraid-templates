@@ -14,7 +14,7 @@
   <Category>Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/filesystem-mcp.xml</TemplateURL>
-  <Icon>https://cdn.simpleicons.org/anthropic/D4A27F</Icon>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/claude.png</Icon>
   <ExtraParams>--memory=512m --cpus=0.5</ExtraParams>
   <PostArgs>supergateway --stdio "mcp-server-filesystem /data" --port 8096</PostArgs>
   <CPUset/>

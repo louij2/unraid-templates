@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>patchmon-redis</Name>
+  <Repository>redis:7-alpine</Repository>
+  <Registry>https://github.com/PatchMon/PatchMon/pkgs/container/patchmon-server</Registry>
+  <Network>patchmon</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/_/redis</Support>
+  <Project>https://redis.io/</Project>
+  <ReadMe>https://hub.docker.com/_/redis</ReadMe>
+  <Overview>Redis 7 for PatchMon (part 2 of 4). Joins the network patchmon with the DNS alias redis. Password-protected; use the same REDIS_PASSWORD in patchmon-server.</Overview>
+  <Category>Tools:Utilities Security:</Category>
+  <WebUI></WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/louij2/unraid-templates/master/templates/patchmon-redis.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhst/icons/main/png/redis.png</Icon>
+  <ExtraParams>--restart=unless-stopped --network-alias=redis --health-cmd='redis-cli --no-auth-warning -a "$REDIS_PASSWORD" ping' --health-interval=5s --health-timeout=5s --health-retries=7 --log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs>sh -c 'redis-server --requirepass "$REDIS_PASSWORD"'</PostArgs>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Create the network once before installing any PatchMon container: docker network create patchmon. Install in this order: patchmon-database, patchmon-redis, patchmon-guacd, patchmon-server.</Requires>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/patchmon/redis" Mode="rw" Description="Redis persistence." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/patchmon/redis</Config>
+  <Config Name="REDIS_PASSWORD" Target="REDIS_PASSWORD" Default="" Mode="" Description="Redis password. Generate one, e.g. openssl rand -hex 32." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+</Container>
