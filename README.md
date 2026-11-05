@@ -10,7 +10,8 @@ Unraid Community Applications templates for a handful of self-built tools —
 [filesystem-mcp](https://github.com/louij2/filesystem-mcp),
 [hass-mcp](https://github.com/louij2/hass-mcp),
 [tailscale-mcp](https://github.com/louij2/tailscale-mcp),
-[ios-backup](https://github.com/louij2/ios-backup), and
+[ios-backup](https://github.com/louij2/ios-backup),
+[android-backup](https://github.com/louij2/android-backup), and
 [homelab-runbooks](https://github.com/louij2/homelab-runbooks) (a generic
 MkDocs Material docs-site template — bring your own docs repo).
 
